@@ -44,14 +44,6 @@
         
         <!-- Contenedor de Diapositivas -->
         <div id="slides" class="relative">
-        <!-- Controles de navegación -->
-        <div class="flex justify-between items-center px-8 py-4 bg-gray-100">
-            <button id="prevBtn" class="bg-orange-500 text-white px-6 py-2 rounded-lg font-bold shadow hover:bg-orange-600 transition">Anterior</button>
-            <span id="slideIndicator" class="text-gray-700 font-semibold"></span>
-            <button id="nextBtn" class="bg-orange-500 text-white px-6 py-2 rounded-lg font-bold shadow hover:bg-orange-600 transition">Siguiente</button>
-        </div>
-        <!-- Contenedor de Diapositivas -->
-        <div id="slides" class="relative">
 
             <!-- Diapositiva 1: Título -->
             <div class="slide active fade-in flex-col items-center justify-center text-center p-8 md:p-12 bg-cover bg-center" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1559224829-304136975f83?q=80&w=2070&auto=format&fit=crop');">
@@ -87,9 +79,9 @@
             <div class="slide fade-in flex-col md:flex-row-reverse items-center justify-center p-8 md:p-16 bg-gray-50">
                 <div class="md:w-1/2 md:pl-12">
                     <h2 class="text-3xl md:text-4xl font-bold brand-text mb-4">Nuestra Solución: Tecnología con Corazón</h2>
-                    <h3 class="text-xl md:text-2xl font-semibold mb-6 text-gray-700">Una app gratuita e intuitiva que transforma la adopción en una experiencia emocionante.</h3>
+                    <h3 class="text-xl md:text-2xl font-semibold mb-6 text-gray-700">Una app gratuita, intuitiva y cautivadora que transforma la adopción en una experiencia emocionante.</h3>
                     <ul class="space-y-4 text-gray-600 text-lg">
-                        <li><span class="font-bold text-gray-800">UX Atractiva tipo "Tinder":</span> Usuarios deslizan, descubren y se enamoran. Refugios publican perfiles completos ilimitadamente.</li>
+                        <li><span class="font-bold text-gray-800">UX Cautivadora tipo "Tinder":</span> Usuarios deslizan, descubren y se enamoran. Refugios publican perfiles completos ilimitadamente.</li>
                         <li><span class="font-bold text-gray-800">Filtros Inteligentes:</span> Busca por tamaño, nivel de energía, convivencia con niños u otras mascotas.</li>
                         <li><span class="font-bold text-gray-800">Ecosistema de Confianza:</span> Chat verificado entre refugio y adoptante, con una guía de adopción paso a paso.</li>
                         <li><span class="font-bold text-gray-800">Más que Adopción:</span> Botón para donar directamente al refugio y acceso a su "wishlist" de necesidades.</li>
@@ -219,38 +211,137 @@
 
             <!-- Diapositiva 8: Equipo -->
             <div class="slide fade-in flex-col items-center justify-center p-8 md:p-12">
-                <h2 class="text-3xl md:text-4xl font-bold brand-text mb-8 text-center">El Equipo Detrás del 
-<script>
-// Navegación de slides
-const slides = document.querySelectorAll('.slide');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const slideIndicator = document.getElementById('slideIndicator');
-let currentSlide = 0;
+                <h2 class="text-3xl md:text-4xl font-bold brand-text mb-8 text-center">El Equipo Detrás del Sueño</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <div>
+                        <img src="https://placehold.co/150x150/FED7AA/F97316?text=F1" class="rounded-full mx-auto mb-4 border-4 brand-border">
+                        <h4 class="font-bold text-xl">[Founder 1]</h4>
+                        <p class="brand-text font-semibold">Producto & Tech</p>
+                        <p class="text-sm text-gray-500 mt-2">Experto en desarrollo de apps móviles y experiencia de usuario.</p>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/150x150/FED7AA/F97316?text=F2" class="rounded-full mx-auto mb-4 border-4 brand-border">
+                        <h4 class="font-bold text-xl">[Founder 2]</h4>
+                        <p class="brand-text font-semibold">Operaciones & Alianzas con Refugios</p>
+                        <p class="text-sm text-gray-500 mt-2">Activista con una profunda red de contactos en el ecosistema de bienestar animal.</p>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/150x150/FED7AA/F97316?text=F3" class="rounded-full mx-auto mb-4 border-4 brand-border">
+                        <h4 class="font-bold text-xl">[Founder 3]</h4>
+                        <p class="brand-text font-semibold">Marketing Social & Crecimiento</p>
+                        <p class="text-sm text-gray-500 mt-2">Especialista en campañas de impacto y construcción de comunidades.</p>
+                    </div>
+                </div>
+            </div>
 
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) slide.classList.add('active');
-    });
-    slideIndicator.textContent = `Diapositiva ${index + 1} de ${slides.length}`;
-    prevBtn.disabled = index === 0;
-    nextBtn.disabled = index === slides.length - 1;
-}
+            <!-- Diapositiva 9: La Petición -->
+            <div class="slide fade-in flex-col items-center justify-center p-8 md:p-16 bg-gray-50 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold brand-text mb-4">Únete a la Misión</h2>
+                <p class="text-xl text-gray-600 mb-10 max-w-3xl">Para lanzar y operar durante los primeros 12 meses, estamos buscando la colaboración de:</p>
+                <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 brand-border">
+                        <h3 class="font-bold text-2xl text-gray-800 mb-2">Voluntarios</h3>
+                        <p class="text-gray-600">Desarrolladores, diseñadores y activistas apasionados para construir y mejorar el MVP.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 brand-border">
+                        <h3 class="font-bold text-2xl text-gray-800 mb-2">Refugios Piloto</h3>
+                        <p class="text-gray-600">Albergues y rescatistas en Chihuahua y CDMX dispuestos a ser los primeros en nuestra plataforma.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 brand-border">
+                        <h3 class="font-bold text-2xl text-gray-800 mb-2">Sponsors & Grants</h3>
+                        <p class="text-gray-600">Marcas de pet-care y fondos semilla para asegurar la operación y el crecimiento inicial.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Diapositiva 10: Contacto -->
+            <div class="slide fade-in flex-col items-center justify-center text-center p-8 md:p-12 bg-cover bg-center" style="background-image: linear-gradient(rgba(50,50,50,0.7), rgba(10,10,10,0.9)), url('https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1974&auto=format&fit=crop');">
+                <h2 class="text-5xl md:text-7xl font-black text-white">Gracias.</h2>
+                <p class="mt-8 text-2xl font-semibold brand-text">Juntos, podemos cambiar miles de vidas.</p>
+                <div class="mt-8 text-white text-lg space-y-2">
+                    <p>contacto@tinpet.org</p>
+                    <p>www.tinpet.org</p>
+                </div>
+            </div>
 
-prevBtn.addEventListener('click', () => {
-    if (currentSlide > 0) {
-        currentSlide--;
-        showSlide(currentSlide);
-    }
-});
-nextBtn.addEventListener('click', () => {
-    if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        showSlide(currentSlide);
-    }
-});
+        </div>
 
-// Inicializar
-showSlide(currentSlide);
-</script>
+        <!-- Navegación -->
+        <div class="bg-gray-50 border-t p-4 flex items-center justify-between">
+            <button id="prevBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                Anterior
+            </button>
+            <div id="slide-counter" class="text-sm text-gray-500"></div>
+            <button id="nextBtn" class="brand-bg hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-lg transition-colors">
+                Siguiente
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // --- SCRIPT PARA LA LÓGICA DE LA PRESENTACIÓN ---
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideCounter = document.getElementById('slide-counter');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        function showSlide(slideIndex) {
+            if (slideIndex < 0 || slideIndex >= totalSlides) {
+                console.error("Índice de diapositiva fuera de rango:", slideIndex);
+                return;
+            }
+            slides.forEach((slide, index) => {
+                if (index === slideIndex) {
+                    slide.classList.add('active');
+                    // Forzar reflow para reiniciar la animación
+                    void slide.offsetWidth; 
+                    slide.classList.add('fade-in');
+                } else {
+                    slide.classList.remove('active', 'fade-in');
+                }
+            });
+            
+            currentSlide = slideIndex;
+            updateCounter();
+            updateNavButtons();
+        }
+
+        function updateCounter() {
+            slideCounter.textContent = `Diapositiva ${currentSlide + 1} de ${totalSlides}`;
+        }
+        
+        function updateNavButtons() {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') {
+                nextBtn.click();
+            } else if (event.key === 'ArrowLeft') {
+                prevBtn.click();
+            }
+        });
+        
+        window.onload = () => {
+            showSlide(0);
+        };
+    </script>
+
+</body>
+</html>
