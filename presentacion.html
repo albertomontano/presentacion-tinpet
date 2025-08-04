@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: TinPet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .slide {
+            display: none;
+            min-height: 85vh;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+        .brand-text {
+            color: #F97316; /* Naranja de la marca */
+        }
+        .brand-bg {
+            background-color: #F97316;
+        }
+        .brand-border {
+            border-color: #F97316;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div id="presentation-container" class="w-full max-w-6xl bg-white rounded-2xl shadow-2xl overflow-hidden">
+        
+        <!-- Contenedor de Diapositivas -->
+        <div id="slides" class="relative">
+        <!-- Controles de navegación -->
+        <div class="flex justify-between items-center px-8 py-4 bg-gray-100">
+            <button id="prevBtn" class="bg-orange-500 text-white px-6 py-2 rounded-lg font-bold shadow hover:bg-orange-600 transition">Anterior</button>
+            <span id="slideIndicator" class="text-gray-700 font-semibold"></span>
+            <button id="nextBtn" class="bg-orange-500 text-white px-6 py-2 rounded-lg font-bold shadow hover:bg-orange-600 transition">Siguiente</button>
+        </div>
+        <!-- Contenedor de Diapositivas -->
+        <div id="slides" class="relative">
+
+            <!-- Diapositiva 1: Título -->
+            <div class="slide active fade-in flex-col items-center justify-center text-center p-8 md:p-12 bg-cover bg-center" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1559224829-304136975f83?q=80&w=2070&auto=format&fit=crop');">
+                <h1 class="text-6xl md:text-8xl font-black tracking-tight brand-text">TinPet</h1>
+                <p class="mt-4 text-xl md:text-3xl font-semibold text-gray-700">Conectando hogares con miles de mascotas en busca de amor.</p>
+                <p class="mt-8 text-lg text-gray-500">Una nueva era para la adopción.</p>
+            </div>
+
+            <!-- Diapositiva 2: El Problema -->
+            <div class="slide fade-in flex-col md:flex-row items-center justify-center p-8 md:p-16">
+                <div class="md:w-1/2 md:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold brand-text mb-4">El Problema: Una Crisis Silenciosa</h2>
+                    <h3 class="text-xl md:text-2xl font-semibold mb-6 text-gray-700">Millones de animales necesitan un hogar. Cientos de miles de personas quieren adoptar. Pero no logran encontrarse.</h3>
+                    <ul class="space-y-4 text-gray-600 text-lg">
+                        <li><span class="font-bold text-gray-800">Cifras Alarmantes:</span> <strong>+20 millones</strong> de perros y gatos viven en la calle en México, la cifra más alta de Latinoamérica.</li>
+                        <li><span class="font-bold text-gray-800">Refugios Saturados:</span> Publican en redes sociales con baja visibilidad, procesos manuales y sin alcance masivo.</li>
+                        <li><span class="font-bold text-gray-800">Adoptantes Frustrados:</span> Desconfían de publicaciones dispersas y se rinden al no encontrar a su compañero ideal de forma sencilla.</li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0 grid grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md">
+                        <p class="text-4xl font-bold brand-text">70%</p>
+                        <p class="text-gray-600">de los perros y gatos en México están en situación de calle.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md">
+                        <p class="text-4xl font-bold brand-text">Solo 500k</p>
+                        <p class="text-gray-600">están en refugios, que operan al límite de su capacidad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 3: La Solución -->
+            <div class="slide fade-in flex-col md:flex-row-reverse items-center justify-center p-8 md:p-16 bg-gray-50">
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl md:text-4xl font-bold brand-text mb-4">Nuestra Solución: Tecnología con Corazón</h2>
+                    <h3 class="text-xl md:text-2xl font-semibold mb-6 text-gray-700">Una app gratuita e intuitiva que transforma la adopción en una experiencia emocionante.</h3>
+                    <ul class="space-y-4 text-gray-600 text-lg">
+                        <li><span class="font-bold text-gray-800">UX Atractiva tipo "Tinder":</span> Usuarios deslizan, descubren y se enamoran. Refugios publican perfiles completos ilimitadamente.</li>
+                        <li><span class="font-bold text-gray-800">Filtros Inteligentes:</span> Busca por tamaño, nivel de energía, convivencia con niños u otras mascotas.</li>
+                        <li><span class="font-bold text-gray-800">Ecosistema de Confianza:</span> Chat verificado entre refugio y adoptante, con una guía de adopción paso a paso.</li>
+                        <li><span class="font-bold text-gray-800">Más que Adopción:</span> Botón para donar directamente al refugio y acceso a su "wishlist" de necesidades.</li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+                    <img src="https://placehold.co/400x600/FFFFFF/F97316?text=App+UI" alt="Interfaz de la app TinPet" class="rounded-2xl shadow-xl transform rotate-3">
+                </div>
+            </div>
+            
+            <!-- Diapositiva 4: Flujo de Usuario -->
+            <div class="slide fade-in flex-col items-center justify-center p-8 md:p-16">
+                <h2 class="text-3xl md:text-4xl font-bold brand-text mb-2 text-center">Un Proceso Sencillo, un Impacto Enorme</h2>
+                <p class="text-lg text-gray-500 mb-12 text-center">Así convertimos un "like" en un "bienvenido a casa".</p>
+                <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                    <!-- Paso 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-orange-100 rounded-full w-24 h-24 flex items-center justify-center">
+                            <svg class="w-12 h-12 brand-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-lg mt-4 mb-2">1. Crea tu Perfil</h4>
+                        <p class="text-sm text-gray-600">Descarga la app, elige tus preferencias y estilo de vida. Estás listo para encontrar a tu match.</p>
+                    </div>
+                    <!-- Paso 2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-orange-100 rounded-full w-24 h-24 flex items-center justify-center">
+                            <svg class="w-12 h-12 brand-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-lg mt-4 mb-2">2. Desliza y Conecta</h4>
+                        <p class="text-sm text-gray-600">Explora perfiles de mascotas. Un ❤️ abre un chat directo y seguro con el refugio.</p>
+                    </div>
+                    <!-- Paso 3 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-orange-100 rounded-full w-24 h-24 flex items-center justify-center">
+                            <svg class="w-12 h-12 brand-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-lg mt-4 mb-2">3. Agenda la Cita</h4>
+                        <p class="text-sm text-gray-600">Coordina una visita al refugio o una videollamada para conocer a tu futura mascota.</p>
+                    </div>
+                    <!-- Paso 4 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-orange-100 rounded-full w-24 h-24 flex items-center justify-center">
+                            <svg class="w-12 h-12 brand-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-lg mt-4 mb-2">4. Adopción y Seguimiento</h4>
+                        <p class="text-sm text-gray-600">Firma el acuerdo digital y comparte momentos felices con el seguimiento post-adopción.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 5: Modelo de Financiamiento -->
+            <div class="slide fade-in flex-col items-center justify-center p-8 md:p-16 bg-gray-50">
+                <h2 class="text-3xl md:text-4xl font-bold brand-text mb-2 text-center">Un Modelo Sostenible para un Impacto Duradero</h2>
+                <p class="text-lg text-gray-500 mb-12 text-center">Operamos como una ONG sin fines de lucro, con 4 fuentes de financiamiento diversificadas.</p>
+                <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 brand-border">
+                        <h4 class="font-bold text-lg mb-2">Donaciones In-App</h4>
+                        <p class="text-sm text-gray-600">Micro-donaciones y propinas mensuales de usuarios. El 95% va directo a los refugios.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 brand-border">
+                        <h4 class="font-bold text-lg mb-2">Patrocinios Corporativos</h4>
+                        <p class="text-sm text-gray-600">Alianzas con marcas líderes (Purina, Hill's) y aseguradoras que buscan impacto social.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 brand-border">
+                        <h4 class="font-bold text-lg mb-2">Merch con Causa</h4>
+                        <p class="text-sm text-gray-600">Venta de productos (collares, camisetas) con un margen del 30% reinvertido en la operación.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 brand-border">
+                        <h4 class="font-bold text-lg mb-2">Grants & Fondos ESG</h4>
+                        <p class="text-sm text-gray-600">Aplicación a convocatorias de bienestar animal y de empresas con metas de impacto social.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 6: Roadmap -->
+            <div class="slide fade-in flex-col items-center justify-center p-8 md:p-16">
+                 <h2 class="text-3xl md:text-4xl font-bold brand-text mb-12 text-center">Nuestro Camino para Salvar Vidas</h2>
+                 <div class="w-full max-w-4xl">
+                    <!-- Fase 1 -->
+                    <div class="flex items-center w-full mb-8">
+                        <div class="bg-orange-500 text-white rounded-full h-16 w-16 flex items-center justify-center font-bold text-xl z-10">1</div>
+                        <div class="flex-1 border-t-4 border-orange-500 border-dashed -ml-4 pl-8 py-4">
+                            <h3 class="font-bold text-xl">Fase Piloto (3-4 meses)</h3>
+                            <p class="text-gray-600">Lanzamiento en Chihuahua y CDMX. <strong>Objetivo:</strong> 15 refugios, 3,000 usuarios activos y validar el modelo.</p>
+                        </div>
+                    </div>
+                    <!-- Fase 2 -->
+                    <div class="flex items-center w-full mb-8">
+                        <div class="bg-orange-500 text-white rounded-full h-16 w-16 flex items-center justify-center font-bold text-xl z-10">2</div>
+                        <div class="flex-1 border-t-4 border-orange-500 border-dashed -ml-4 pl-8 py-4">
+                            <h3 class="font-bold text-xl">Lanzamiento Nacional (12 meses)</h3>
+                            <p class="text-gray-600">Expansión a las 10 principales ciudades de México. <strong>Objetivo:</strong> +100 refugios, 50,000 usuarios.</p>
+                        </div>
+                    </div>
+                    <!-- Fase 3 -->
+                    <div class="flex items-center w-full">
+                        <div class="bg-orange-500 text-white rounded-full h-16 w-16 flex items-center justify-center font-bold text-xl z-10">3</div>
+                        <div class="flex-1 border-t-4 border-orange-500 border-dashed -ml-4 pl-8 py-4">
+                            <h3 class="font-bold text-xl">Expansión LATAM (24 meses)</h3>
+                            <p class="text-gray-600">Inicio de operaciones en Colombia, Argentina y Chile. <strong>Objetivo:</strong> +300 refugios, 250,000 usuarios en la región.</p>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            
+            <!-- Diapositiva 7: Impacto Esperado -->
+            <div class="slide fade-in flex-col items-center justify-center p-8 md:p-16 bg-gray-50">
+                <h2 class="text-3xl md:text-4xl font-bold brand-text mb-12 text-center">El Impacto que Generaremos Juntos</h2>
+                <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <p class="text-5xl font-black brand-text">5,000+</p>
+                        <p class="mt-2 text-xl font-semibold text-gray-700">Adopciones Facilitadas</p>
+                        <p class="text-gray-500">En el primer año de operación nacional.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <p class="text-5xl font-black brand-text">$7M</p>
+                        <p class="mt-2 text-xl font-semibold text-gray-700">Ahorro a Refugios</p>
+                        <p class="text-gray-500">Estimado en alimento y gastos veterinarios gracias a adopciones más rápidas.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <p class="text-5xl font-black brand-text">10%</p>
+                        <p class="mt-2 text-xl font-semibold text-gray-700">Adopciones con Donación</p>
+                        <p class="text-gray-500">Creando un flujo constante de recursos para los que más lo necesitan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 8: Equipo -->
+            <div class="slide fade-in flex-col items-center justify-center p-8 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-bold brand-text mb-8 text-center">El Equipo Detrás del 
+<script>
+// Navegación de slides
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const slideIndicator = document.getElementById('slideIndicator');
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+    });
+    slideIndicator.textContent = `Diapositiva ${index + 1} de ${slides.length}`;
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === slides.length - 1;
+}
+
+prevBtn.addEventListener('click', () => {
+    if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+    }
+});
+nextBtn.addEventListener('click', () => {
+    if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+    }
+});
+
+// Inicializar
+showSlide(currentSlide);
+</script>
